@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import firebase from 'firebase';
 import store from './store.js';
 import Router from './Router.js'
+import credentials from './credentials'
 
 class App extends Component{
   constructor(props) {
@@ -12,15 +13,7 @@ class App extends Component{
   }
 
   componentWillMount = () => {
-    const config = {
-      apiKey: "AIzaSyDi0GXnRo2n5SbWCDt4oFdDPgqYRI0vqj4",
-      authDomain: "manager-ec272.firebaseapp.com",
-      databaseURL: "https://manager-ec272.firebaseio.com",
-      projectId: "manager-ec272",
-      storageBucket: "manager-ec272.appspot.com",
-      messagingSenderId: "616480915120"
-    };
-    firebase.initializeApp(config);
+    firebase.initializeApp(credentials);
   }
 
   render() {
